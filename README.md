@@ -20,6 +20,10 @@ Beim ersten Aufrum von word-search:find-word wird das Woerterbuch geladen.
 Das kann je nach Hardware eine gewisse Zeit in anspruch nehmen.
 
 
+## Entwicklung:
+Die Bibliothek wurde unter SBCL auf Debian GNU/Linux entwickelt und getestet.
+
+
 ## Quelle:
 [1] http://sourceforge.net/projects/germandict/
 
