@@ -16,7 +16,8 @@ word-search sucht basierend auf einer Wortliste [1] nach Woertern anhand der lae
 '("TEST" "TALS" "TABS" "STAB" "SEAT" "SATT" "LEST" "LEBT" "LEAS" "LAST" "LAST" "LABT" "LABE" "ETAT" "ELSA" "ELBA" "BETT" "BETA" "BELT" "BEAT" "BEAS" "BAST" "BASE" "ALTE" "ALBE" "ABEL")
 ```
 
-
+Beim ersten Aufrum von word-search:find-word wird das Woerterbuch geladen. 
+Das kann je nach Hardware eine gewisse Zeit in anspruch nehmen.
 
 
 ## Quelle:
