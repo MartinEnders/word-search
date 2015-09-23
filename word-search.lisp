@@ -35,7 +35,7 @@ Convert all words to upcase"
 	  while line
        do (when (stringp line)
 	    (let ((length (1- (length line))))
-	      (when (> length 0)
+	      (when (and (> length 0) (<= length 8))
 		(push (string-upcase (subseq line 0 length)) (gethash length dictionary-hash))))))))
 
 
