@@ -10,7 +10,7 @@
 (defparameter *dictionary-hash* nil
   "Hash for dictionary-access")
 
-(defparameter *max-word-length* 9
+(defparameter *max-word-length* nil
   "Only words up to *max-word-length* are read from the dictionary file")
 
 
@@ -23,10 +23,11 @@ Initialization is done automatically."
 
 
 
-(defun init ()
+(defun init (&key (max-word-length nil))
   "Call this function directly to initilize or reinitialize the word-database in *dictionary-hash*"
   (setf *dictionary-path* (asdf:system-relative-pathname 'word-search  "german.dic"))
   (setf *dictionary-hash* (make-hash-table :test 'eq :size 1700000))
+  (setf *max-word-length* max-word-length)
   (read-word-list *dictionary-path* *dictionary-hash*))
 	
 
@@ -38,7 +39,9 @@ Convert all words to upcase"
 	  while line
        do (when (stringp line)
 	    (let ((length (1- (length line))))
-	      (when (and (> length 0) (<= length *max-word-length*))
+	      (when (and (> length 0) (if (and *max-word-length* (integerp *max-word-length*))
+					  (<= length *max-word-length*)
+					  t))
 		(push (string-upcase (subseq line 0 length)) (gethash length dictionary-hash))))))))
 
 

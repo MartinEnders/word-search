@@ -2,5 +2,6 @@
 
 (defpackage #:word-search
   (:use #:cl)
-  (:export #:find-word))
+  (:export #:find-word
+	   #:init))
 
