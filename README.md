@@ -2,6 +2,8 @@
 
 word-search sucht basierend auf einer Wortliste [1] nach Woertern anhand der laenge und der enthaltenen Buchstaben wobei jeder Buchstabe nur einmal genutzt wird.
 
+word-search habe ich urspruenglich als Loesungshilfe fuer die App "4 Bilder 1 Wort" entwickelt.
+
 ```cl
 (word-search:find-word length word-pool)
 ```
