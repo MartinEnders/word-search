@@ -10,6 +10,9 @@
 (defparameter *dictionary-hash* nil
   "Hash for dictionary-access")
 
+(defparameter *max-word-length* 9
+  "Only words up to *max-word-length* are read from the dictionary file")
+
 
 (defun find-word (length char-pool)
   "Just call this function to find words with specific length (Integer) which can be built from the characters in char-pool (String)
@@ -35,7 +38,7 @@ Convert all words to upcase"
 	  while line
        do (when (stringp line)
 	    (let ((length (1- (length line))))
-	      (when (and (> length 0) (<= length 8))
+	      (when (and (> length 0) (<= length *max-word-length*))
 		(push (string-upcase (subseq line 0 length)) (gethash length dictionary-hash))))))))
 
 
